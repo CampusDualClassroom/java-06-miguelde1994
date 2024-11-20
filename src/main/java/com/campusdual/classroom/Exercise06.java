@@ -5,10 +5,14 @@ import java.util.Calendar;
 public class Exercise06 {
 
     public static void main(String[] args) {
+        //Desde el método main() se llamará al resto de métodos, pasándoles como argumento, el mes y la hora a cada uno, respectivamente.
         // Creamos una instancia del calendario
         Calendar now = Calendar.getInstance();
         int month = now.get(Calendar.MONTH) + 1;
         int hour = now.get(Calendar.HOUR_OF_DAY);
+
+        checkHour(hour);
+        checkSeason(month);
     }
 
     //TODO ↓
@@ -17,6 +21,10 @@ public class Exercise06 {
     // Si la hora es desde las 14:00 a las 20:59, imprimir por pantalla → It's afternoon
     // Si la hora es desde las 21:00 a las 23:59, imprimir por pantalla → It's night
     public static void checkHour(int hour) {
+        //El método checkHour() recibe un número entero por parámetro. El parámetro será el valor de la hora
+        // del día, en el mismo momento en que se ejecuta el código, obtenida gracias a la clase Calendar,
+        // que gestiona fechas. El método imprimirá por pantalla la franja horaria correspondiente a la hora que recibe,
+        //  cotejada con un switch. solicite en el parámetro.
         {
             switch (hour) {
                 case 21:
@@ -29,7 +37,8 @@ public class Exercise06 {
                 case 4:
                 case 5:
                 case 6: {
-
+                    System.out.println("It's night");
+                    break;
                 }
                 case 7:
                 case 8:
@@ -38,7 +47,8 @@ public class Exercise06 {
                 case 11:
                 case 12:
                 case 13: {
-
+                    System.out.println("It's morning");
+                    break;
 
                 }
                 case 14:
@@ -48,7 +58,8 @@ public class Exercise06 {
                 case 18:
                 case 19:
                 case 20: {
-
+                    System.out.println("It's afternoon");
+                    break;
 
                 }
                 default:
@@ -63,29 +74,35 @@ public class Exercise06 {
     // Si es Julio, Agosto o Septiembre, imprimir por pantalla → Summer
     // Si es Octubre, Noviembre o Diciembre, imprimir por pantalla → Autumn
     public static void checkSeason(int month) {
+        //El método checkSeason() recibe un número entero por parámetro. El parámetro numérico representará
+        // el mes del año en que se ejecuta el código, obtenido por la clase Calendar. El método imprimirá por
+        //  pantalla la estación del año correspondiente al mes que recibe, cotejado con un switch
         switch (month) {
             case 1:
             case 2:
             case 3: {
-
-
+                System.out.println("Winter");
+                break;
             }
             case 4:
             case 5:
             case 6: {
-
+                System.out.println("Spring");
+                break;
 
             }
             case 7:
             case 8:
             case 9: {
-
+                System.out.println("Summer");
+                break;
 
             }
             case 10:
             case 11:
             case 12: {
-
+                System.out.println("Autumn");
+                break;
 
             }
             default:
